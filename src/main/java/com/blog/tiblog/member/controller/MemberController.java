@@ -3,6 +3,7 @@ package com.blog.tiblog.member.controller;
 import com.blog.tiblog.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/{id}")
+    @Transactional
     public String info(@PathVariable("id") Long id){
         String info = memberService.getInfo(id);
         return info;
