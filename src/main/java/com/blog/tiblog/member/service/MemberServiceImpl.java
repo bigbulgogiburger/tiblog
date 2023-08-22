@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
 
-    public String getInfo(Long id){
+    public String getInfo(Long id) throws IllegalAccessException {
         String info = memberRepository.findById(id);
         return info;
     }

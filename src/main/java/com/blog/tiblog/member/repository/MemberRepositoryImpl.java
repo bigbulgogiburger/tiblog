@@ -19,8 +19,12 @@ public class MemberRepositoryImpl implements MemberRepository {
     }
 
 
-    public String findById(Long id){
+    public String findById(Long id) throws IllegalAccessException {
         String info = memberMap.get(id);
+
+        if(id==1){
+            throw new IllegalAccessException("비정상적인 접근 발생");
+        }
         return info;
     }
 }

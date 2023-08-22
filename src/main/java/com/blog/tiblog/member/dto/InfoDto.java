@@ -6,5 +6,6 @@ import lombok.Data;
 public class InfoDto {
 
     private Integer memberNo;
+    private String id;
     private String userName;
 }
